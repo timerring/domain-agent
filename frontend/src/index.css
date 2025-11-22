@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    color: #0a0a0a;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    margin: 0;
+  }
+  
+  * {
+    border-color: #e5e7eb;
+  }
+}
+
+/* Custom components */
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 text-sm font-medium border rounded transition-all;
+    color: #0a0a0a;
+    border-color: #0a0a0a;
+  }
+  
+  .btn-primary:hover:not(:disabled) {
+    background-color: #0a0a0a;
+    color: white;
+  }
+  
+  .btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .input-field {
+    @apply px-0 py-2 border-0 border-b transition-colors bg-transparent;
+    color: #0a0a0a;
+    border-color: #d1d5db;
+  }
+  
+  .input-field:focus {
+    border-color: #0a0a0a;
+    outline: none;
+  }
+  
+  .input-field::placeholder {
+    color: #9ca3af;
+  }
+  
+  .card {
+    @apply bg-white border rounded-lg;
+    border-color: #e5e7eb;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .text-brand {
+    color: #0a0a0a;
+  }
+  
+  .text-brand-light {
+    color: #666;
+  }
+  
+  .bg-brand {
+    background-color: #0a0a0a;
+  }
+  
+  .bg-brand-gray {
+    background-color: #f8f8f8;
+  }
+}
+
+/* Code styles */
+code {
+  font-family: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
